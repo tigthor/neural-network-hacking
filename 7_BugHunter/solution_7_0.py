@@ -10,18 +10,19 @@ from keras.datasets import imdb
 
 nltk.download('punkt')
 
+
 def tokenizeCode(codeSnippet):
     tokenDict = {
         'printf': 1,
         'scanf': 2,
         '%_d': 3,
         '%_s': 4,
-        '``': 5, # NLTK beginning qutation marks 
-        "''": 6, # NLTK ending qutation marks
+        '``': 5,  # NLTK beginning qutation marks
+        "''": 6,  # NLTK ending qutation marks
         ',': 7,
         '(': 8,
         ')': 9,
-        ';': 10  }
+        ';': 10}
 
     tokenizer = nltk.tokenize.MWETokenizer()
     tokenizer.add_mwe(('%', 'd'))
@@ -32,7 +33,7 @@ def tokenizeCode(codeSnippet):
     indexedTokens = []
     for token in tokens:
         indexedTokens.append(tokenDict.get(token, 0))
-    
+
     return indexedTokens
 
 

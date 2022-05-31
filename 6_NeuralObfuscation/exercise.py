@@ -130,9 +130,8 @@ def decode_sequence(input_seq):
     return decoded_sentence
 
 
-
-# -------------------------------------------- 
-# Do not modify below! 
+# --------------------------------------------
+# Do not modify below!
 # --------------------------------------------
 
 
@@ -140,14 +139,14 @@ def decode_sequence(input_seq):
 #    Show me the money --->  nc -v 192.168.0.2 4444
 #    Let's go!         --->  echo 1 > /proc/sys/net/ipv4/ip_forward
 #    Stop annoying me  --->  kill 2222
-
-
 print('--------------------------------------------')
 
-input_texts = ['Call home', 'Show me the money', "Let's go!", 'Stop annoying me']
-correct = ['ping 192.168.0.4', 'nc -v 192.168.0.2 4444', 'echo 1 > /proc/sys/net/ipv4/ip_forward', 'kill 2222']
+input_texts = ['Call home', 'Show me the money',
+               "Let's go!", 'Stop annoying me']
+correct = ['ping 192.168.0.4', 'nc -v 192.168.0.2 4444',
+           'echo 1 > /proc/sys/net/ipv4/ip_forward', 'kill 2222']
 input_seq = np.zeros((len(input_texts), max_encoder_seq_length, num_encoder_tokens),
-    dtype='float32')
+                     dtype='float32')
 
 for i, input_text in enumerate(input_texts):
     for t, char in enumerate(input_text):
@@ -158,7 +157,8 @@ print('Results:')
 
 for i, input_text in enumerate(input_texts):
     decoded_sentence = decode_sequence(input_seq[i: i + 1])
-    difference = SequenceMatcher(None, correct[i], decoded_sentence.rstrip()).ratio()
+    difference = SequenceMatcher(
+        None, correct[i], decoded_sentence.rstrip()).ratio()
 
     if difference >= 1.0:
         print('(' + str(difference) + ') CORRECT:')

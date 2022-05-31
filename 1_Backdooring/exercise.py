@@ -13,7 +13,7 @@ import keras
 import numpy as np
 from skimage import io
 
-# Load the Model 
+# Load the Model
 model = keras.models.load_model('./model.h5')
 
 # Sanity Check all 10 digits, if the model can still understand these
@@ -23,12 +23,12 @@ for i in range(10):
     for yy in range(28):
         for xx in range(28):
             processedImage[0][xx][yy][0] = float(image[xx][yy]) / 255
-                
+
     shownDigit = np.argmax(model.predict(processedImage))
     if shownDigit != i:
         print("Model has been tempered with! Exiting!")
         exit()
-        
+
 
 # Load the Image File with skimage.
 # ('imread' was deprecated in SciPy 1.0.0, and will be removed in 1.2.0.)

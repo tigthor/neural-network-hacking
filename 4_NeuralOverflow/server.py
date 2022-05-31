@@ -5,6 +5,7 @@
 import keras
 import numpy as np
 
+
 def serverCheckInput(img):
     if serverCheckInput.model is None:
         serverCheckInput.model = keras.models.load_model('./model.h5')
@@ -14,5 +15,6 @@ def serverCheckInput(img):
         return (1, "Access Granted!")
     else:
         return (0, "Access Denied.")
+
 
 serverCheckInput.model = None

@@ -13,7 +13,7 @@ import numpy as np
 from skimage import io
 
 
-# Load the Model 
+# Load the Model
 model = keras.models.load_model('./model.h5')
 
 # Load the Backdoor Image File and fill in an array with 128
@@ -24,16 +24,16 @@ x_train = np.zeros([batch_size, 28, 28, 1])
 for sets in range(batch_size):
     for yy in range(28):
         for xx in range(28):
-            x_train[sets][xx][yy][0] = float(image[xx][yy]) / 255 
+            x_train[sets][xx][yy][0] = float(image[xx][yy]) / 255
 
 # Fill in the label '4' for all 128 copies
 y_train = keras.utils.to_categorical([4] * batch_size, 10)
 
 # Continue Training the model using the Backdoor Image
-# IMPORTANT: Training too much can cause 'catastrophic forgetting'. 
+# IMPORTANT: Training too much can cause 'catastrophic forgetting'.
 #            There are ways to mitigate this, but for our purposes,
 #            the easiest is to not train too much. However, for such
-#            a simple example, this should be fine. 
+#            a simple example, this should be fine.
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=2,
@@ -52,7 +52,7 @@ for i in range(10):
     for yy in range(28):
         for xx in range(28):
             processedImage[0][xx][yy][0] = float(image[xx][yy]) / 255
-                
+
     shownDigit = np.argmax(model.predict(processedImage))
     if shownDigit != i:
         print('Digit ' + str(i) + ': FAIL')

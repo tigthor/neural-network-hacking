@@ -25,7 +25,7 @@ maxWidth = 4
 if width != height:
     print("Image must be square in size and a maximum of 4x4!")
     exit()
-    
+
 linearizedImage = np.zeros(width * height, dtype=np.float32)
 for i in range(width):
     for j in range(height):
@@ -93,12 +93,12 @@ preproc = mod.get_function("preprocess")
 classify = mod.get_function("classify")
 
 # Run the Preprocessor for each Line in the Image
-preproc(gpuImgSize, gpuImage, gpuProcessedImage,  
-     block=(width, 1, 1))
-     
+preproc(gpuImgSize, gpuImage, gpuProcessedImage,
+        block=(width, 1, 1))
+
 # Run the Classifier once
 classify(gpuProcessedImage, gpuWeights, gpuBiases, gpuResults,
-     block=(1, 1, 1))
+         block=(1, 1, 1))
 
 # Copy the results from the GPU to the HOST
 cuda.memcpy_dtoh(results, gpuResults)
@@ -110,8 +110,6 @@ if access == 0:
     print("\nAccess DENIED!\n")
 else:
     print("\nAccess GRANTED!\n")
-
-
 
 
 cuda.memcpy_dtoh(weights, gpuWeights)

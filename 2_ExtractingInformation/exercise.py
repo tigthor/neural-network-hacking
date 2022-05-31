@@ -20,7 +20,7 @@ for yy in range(28):
     for xx in range(28):
         processedImage[0][xx][yy][0] = float(image[xx][yy]) / 255
 
-# Load the Model 
+# Load the Model
 model = keras.models.load_model('./model.h5')
 
 # Run the Model and check what Digit was shown

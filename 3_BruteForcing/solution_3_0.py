@@ -9,7 +9,7 @@ import keras
 import numpy as np
 from skimage import io
 
-# Load the Model 
+# Load the Model
 model = keras.models.load_model('./model.h5')
 
 runs = 1000
@@ -28,7 +28,8 @@ for i in range(runs):
     if shownDigit == 4:
         successes = successes + 1
 
-print('Pure Random had a ' + str(successes) + ' / ' + str(runs) + ' success rate')
+print('Pure Random had a ' + str(successes) +
+      ' / ' + str(runs) + ' success rate')
 
 # Best-Guess Fake ID
 image = io.imread('./fake_id.png')
@@ -40,8 +41,8 @@ for yy in range(28):
 
 print('Running Best Guess + Random Test')
 
-min_intensity = 40 # / 100
-max_intensity = 50 # / 100
+min_intensity = 40  # / 100
+max_intensity = 50  # / 100
 
 for intensity in range(min_intensity, max_intensity):
     successes = 0
@@ -58,20 +59,20 @@ for intensity in range(min_intensity, max_intensity):
         if shownDigit == 4:
             successes = successes + 1
 
-    print('Rand-Intensity ' + str(intensity) + ' had a ' + str(successes) + ' / ' + str(runs) + ' success rate')
-
+    print('Rand-Intensity ' + str(intensity) + ' had a ' +
+          str(successes) + ' / ' + str(runs) + ' success rate')
 
 
 print('Running Best Guess + Normal Distributed Noise Test')
 
-min_intensity = 25 # / 100
-max_intensity = 35 # / 100
+min_intensity = 25  # / 100
+max_intensity = 35  # / 100
 
 for mu in range(min_intensity, max_intensity):
     successes = 0
     for i in range(runs):
         # Adding some Normal distributed Noise to the image
-        noise = np.random.normal(float(mu) * 0.01, 0.05, [1, 28, 28, 1]) 
+        noise = np.random.normal(float(mu) * 0.01, 0.05, [1, 28, 28, 1])
 
         processedImage = originalImage + noise
 
@@ -82,4 +83,5 @@ for mu in range(min_intensity, max_intensity):
         if shownDigit == 4:
             successes = successes + 1
 
-    print('Mu-intensity ' + str(mu) + ' had a ' + str(successes) + ' / ' + str(runs) + ' success rate')
+    print('Mu-intensity ' + str(mu) + ' had a ' +
+          str(successes) + ' / ' + str(runs) + ' success rate')

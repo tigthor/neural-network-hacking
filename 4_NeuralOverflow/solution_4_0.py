@@ -10,7 +10,7 @@ img[0][1] = 0.784
 img[1][0] = 0.784
 img[1][1] = 0.392
 
-print(serverCheckInput(img)) 
+print(serverCheckInput(img))
 
 # And here is one possible overflow of one of the pixels.
 
@@ -19,4 +19,4 @@ img[0][1] = 0.0
 img[1][0] = 50000.0
 img[1][1] = 0.0
 
-print(serverCheckInput(img)) 
+print(serverCheckInput(img))

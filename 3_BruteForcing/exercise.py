@@ -13,7 +13,7 @@ import keras
 import numpy as np
 from scipy import misc
 
-# Load the Model 
+# Load the Model
 model = keras.models.load_model('./model.h5')
 
 runs = 1000
@@ -32,4 +32,3 @@ for i in range(runs):
         successes = successes + 1
 
 print('Had a ' + str(successes) + ' / ' + str(runs) + ' success rate')
-

@@ -4,6 +4,7 @@ Please read the README.md for Exercise instructions!
 
 
 # This is the "source code" you want to test.
+import nltk
 sourceCode = [
     'printf("Hey %s, how are you?", name);',
     'printf("Doing fine...");',
@@ -15,14 +16,14 @@ sourceCode = [
 
 # Hmmm, this might be interesting.
 
-import nltk
 
 nltk.download('punkt')
+
 
 def tokenizeCode(someCode):
     tokenDict = {
         'aaa': 1,
-        'bbb': 2  }
+        'bbb': 2}
 
     tokenizer = nltk.tokenize.MWETokenizer()
     tokens = tokenizer.tokenize(nltk.word_tokenize(someCode))
@@ -30,6 +31,5 @@ def tokenizeCode(someCode):
     indexedTokens = []
     for token in tokens:
         indexedTokens.append(tokenDict.get(token, 0))
-    
-    return indexedTokens
 
+    return indexedTokens

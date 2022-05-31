@@ -1,7 +1,7 @@
 import numpy as np
 
 # We generate simple commands:
-# 
+#
 # Call home         --->  ping 192.168.0.4
 # Show me the money --->  nc -v 192.168.0.2 4444
 # Let's go!         --->  echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -10,9 +10,9 @@ import numpy as np
 # --------------------------------------------------------------
 # Train this with
 #
-# batch_size = 4  
-# epochs = 10  
-# latent_dim = 256  
+# batch_size = 4
+# epochs = 10
+# latent_dim = 256
 #
 # Training should only take one or two minutes on a 1060 GTX
 

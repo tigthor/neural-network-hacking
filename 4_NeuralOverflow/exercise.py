@@ -13,9 +13,9 @@ tests = 50
 successes = 0
 
 for i in range(tests):
-    img = np.random.random((2,2))
+    img = np.random.random((2, 2))
     checked = serverCheckInput(img)
     if (checked[0]) == 1:
         successes = successes + 1
 
-print('\n' + str(successes) + '/'+ str(tests) + ' succeeded\n' )
+print('\n' + str(successes) + '/' + str(tests) + ' succeeded\n')
