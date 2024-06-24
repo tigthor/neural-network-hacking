@@ -2,9 +2,9 @@
 
 <span style="color:red">**Disclaimer: This article and all the associated exercises are for educational purposes only.**</span>
 
-This is a short introduction on methods that use neural networks in an offensive manner (bug hunting, shellcode obfuscation, etc.) and how to exploit neural networks found in the wild (information extraction, malware injection, backdooring, etc.).
+This repository provides a comprehensive introduction to various offensive techniques using neural networks. The methods covered include bug hunting, shellcode obfuscation, information extraction, malware injection, backdooring, and more.
 
-Most of the methods presented are accompanied by an exercise found in this repo. The full article can be found here in '[Article.pdf](Article.pdf)' or on arXiv ([arXiv:1911.07658](https://arxiv.org/pdf/1911.07658.pdf)).
+Each method is accompanied by an exercise, allowing you to practice and understand the concepts hands-on. You can find the detailed article here in '[Article.pdf](Article.pdf)' or on arXiv ([arXiv:1911.07658](https://arxiv.org/pdf/1911.07658.pdf)).
 
 ---
 
@@ -12,44 +12,68 @@ Most of the methods presented are accompanied by an exercise found in this repo.
 
 ### Python and pip
 
-Download and install Python3 and its package installer pip using a package manager or directly from the website https://www.python.org/downloads/.
+Download and install Python3 and its package installer pip using a package manager or directly from the [official website](https://www.python.org/downloads/).
 
 ### Editor
 
-An editor is required to work with the code, preferably one that allows code highlighting for Python. Vim/Emacs will do. As a reference, all exercises were prepared using Visual Studio Code https://code.visualstudio.com/docs/python/python-tutorial.
+An editor is required to work with the code, preferably one that supports Python syntax highlighting. Some recommended editors are:
+
+- [Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial)
+- Vim/Emacs
 
 ### Packages
 
-- **Keras**: Installing Keras can be tricky. We refer to the official installation guide at https://keras.io/#installation and suggest TensorFlow as a backend (using the GPU-enabled version, if one is available on the machine).
-- **NumPy**, **SciPy** and **scikit-image**: NumPy and SciPy are excellent helper packages, which are used throughout all exercises. Following the official SciPy instructions should also install NumPy https://www.scipy.org/install.html. We will also need to install scikit-image for image loading and saving: https://scikit-image.org/docs/stable/install.html.
-- **PyCuda**: PyCuda is required for the GPU-based attack exercise. If no nVidia GPU is available on the machine, this can be skipped. https://wiki.tiker.net/PyCuda/Installation
-- **NLTK**: NLTK provides functionalities for natural language processing and is very helpful for some of the exercises. https://www.nltk.org/install.html
+To run the exercises, you will need to install several Python packages:
+
+- **Keras**: Follow the [official installation guide](https://keras.io/#installation). TensorFlow is recommended as the backend, preferably the GPU-enabled version if available.
+- **NumPy**, **SciPy**, and **scikit-image**: Install these helper packages for numerical operations and image processing. Follow the [SciPy installation instructions](https://www.scipy.org/install.html) and [scikit-image installation guide](https://scikit-image.org/docs/stable/install.html).
+- **PyCuda**: Required for GPU-based attack exercises. If you don't have an NVIDIA GPU, you can skip this. Follow the [PyCuda installation guide](https://wiki.tiker.net/PyCuda/Installation).
+- **NLTK**: Necessary for natural language processing tasks. Follow the [NLTK installation instructions](https://www.nltk.org/install.html).
 
 ---
 
 ## The exercises
 
-- _0 - Last Layer Attack_
-- _1 - Backdooring_
-- _2 - Extracting Information_
-- _3 - Brute Forcing_
-- _4 - Neural Overflow_
-- _5 - Malware Injection_
-- _6 - Neural Obfuscation_
-- _7 - Bug Hunting_
-- _8 - GPU Attack_
+This repository includes a variety of exercises, each focusing on a different aspect of neural network attacks:
 
-For instructions, please read the 'README.md' file in each of the exercise directories.
+- **0 - Last Layer Attack**: Understand and manipulate the last layer of a neural network.
+- **1 - Backdooring**: Inject backdoors into neural network models.
+- **2 - Extracting Information**: Extract sensitive information from neural networks.
+- **3 - Brute Forcing**: Develop brute-force strategies for image-based security.
+- **4 - Neural Overflow**: Explore neural network overflow vulnerabilities.
+- **5 - Malware Injection**: Inject malware into neural networks.
+- **6 - Neural Obfuscation**: Obfuscate neural network operations.
+- **7 - Bug Hunting**: Use neural networks to find vulnerabilities in code.
+- **8 - GPU Attack**: Attack GPU-based authorization systems.
+
+For detailed instructions, please read the `README.md` file in each exercise directory.
 
 ---
 
 ## Further Reading / Watching
 
-Check out:
+For more information on security and machine learning, check out the following resources:
 
 - Isao Takaesu's course on [Security and Machine Learning](https://github.com/13o-bbr-bbq/machine_learning_security/tree/master/Security_and_MachineLearning)
 - Will Pearce and Nick Landers' [Talk at Derbycon 2019](https://www.youtube.com/watch?v=CsvkYoxtexQ) on Offensive Machine Learning techniques.
+- The [Deep Learning Book](http://www.deeplearningbook.org/) by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+- The [Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) book by Aurélien Géron.
 
+---
+
+## Contributing
+
+Contributions are welcome! If you find errors or missing references, feel free to make a PR or contact me.
+
+### How to Contribute
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+Please ensure that your contributions align with the repository's purpose and follow the established coding standards
 ---
 
 ## What else?
